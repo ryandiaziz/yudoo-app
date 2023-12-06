@@ -1,10 +1,13 @@
+'use client'
 import React from "react";
+import { usePathname } from "next/navigation";
 
-const SidebarManuItem = ({ icon, name }: any) => {
+const SidebarManuItem = ({ icon, name, path }: any) => {
+    const pathName = usePathname()
     return (
-        <div className="flex items-center hover:bg-bg-200 cursor-pointer p-2 rounded-md">
+        <div className={`flex items-center hover:bg-bg-200 cursor-pointer p-2 rounded-md ${pathName.includes(path) && 'bg-bg-200'}`}>
             <div className="mr-3 text-text-100">{icon}</div>
-            <h4 className="text-base text-text-100">{name}</h4>
+            <h4 className={`text-base text-text-100 ${pathName.includes(path) && 'font-medium'}`}>{name}</h4>
         </div>
     );
 };

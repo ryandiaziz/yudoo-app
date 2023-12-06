@@ -4,7 +4,7 @@ import Sidebar from "@/components/layouts/Sidebar";
 
 const TaskLayout = ({ children }: { children: React.ReactNode }) => {
     return (
-        <main className="ml-60 mt-3">
+        <main className="ml-64 mt-3">
             <Sidebar />
             <div>{children}</div>
         </main>
