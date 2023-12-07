@@ -26,16 +26,16 @@ const config: Config = {
         'bg-300': '#FFFFFF',
       },
       animation: {
-        masuk: 'masuk 270ms ease-in 1 normal forwards',
+        show: 'show 270ms ease-in 1 normal forwards',
         keluar: 'keluar 270ms ease-out 1 normal forwards'
       },
       keyframes: {
-        masuk: {
-          '0%': {
-            transform: 'translateX(-200px)'
+        show: {
+          from: {
+            opacity: '0'
           },
-          '100%': {
-            transform: 'translateX(0px)'
+          to: {
+            opacity: '1'
           },
         },
         keluar: {
