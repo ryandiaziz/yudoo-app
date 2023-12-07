@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import StoreProvider from "@/store/StoreProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -13,7 +14,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-bg-300">{children}</body>
+      <body className="bg-bg-300">
+        <StoreProvider>
+          {children}
+        </StoreProvider>
+      </body>
     </html>
   );
 }

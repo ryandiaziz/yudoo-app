@@ -24,6 +24,28 @@ const config: Config = {
         'bg-100': '#F5F3F7',
         'bg-200': '#E9E4ED',
         'bg-300': '#FFFFFF',
+      },
+      animation: {
+        masuk: 'masuk 270ms ease-in 1 normal forwards',
+        keluar: 'keluar 270ms ease-out 1 normal forwards'
+      },
+      keyframes: {
+        masuk: {
+          '0%': {
+            transform: 'translateX(-200px)'
+          },
+          '100%': {
+            transform: 'translateX(0px)'
+          },
+        },
+        keluar: {
+          '0%': {
+            transform: 'translateX(0px)'
+          },
+          '100%': {
+            transform: 'translateX(-200px)'
+          }
+        }
       }
     },
   },
