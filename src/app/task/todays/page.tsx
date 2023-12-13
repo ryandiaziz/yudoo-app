@@ -7,12 +7,14 @@ import AddTask from "@/components/elements/AddTask";
 import Title from "@/components/elements/Title";
 import TaskItem from "@/components/elements/TaskItem";
 import IconMenu from "@/components/elements/IconMenu";
+import TaskSidebar from "@/components/layouts/TaskSidebar";
 
 
 const TodaysPage = () => {
   const { isSidebarOpen } = useAppSelector(state => state.menu)
   return (
     <div className="ml-3">
+      <TaskSidebar />
       <PageHeadingContainer>
         <IconMenu isSidebarOpen={isSidebarOpen} />
         <Title text={'Today'} />

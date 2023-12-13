@@ -2,11 +2,13 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../store'
 
 export interface MenuState {
-    isSidebarOpen: boolean
+    isSidebarOpen: boolean,
+    isTaskSidebarOpen: boolean,
 }
 
 const initialState: MenuState = {
-    isSidebarOpen: true
+    isSidebarOpen: true,
+    isTaskSidebarOpen: false,
 }
 
 export const menuSlice = createSlice({
@@ -16,9 +18,15 @@ export const menuSlice = createSlice({
         onSidebarHandler: state => {
             state.isSidebarOpen = !state.isSidebarOpen
         },
+        onTaskSidebarHandler: (state, action) => {
+            state.isTaskSidebarOpen = action.payload
+        }
     }
 })
 
-export const { onSidebarHandler } = menuSlice.actions
+export const {
+    onSidebarHandler,
+    onTaskSidebarHandler,
+} = menuSlice.actions
 
 export default menuSlice.reducer

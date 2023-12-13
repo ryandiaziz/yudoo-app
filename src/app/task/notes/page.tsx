@@ -9,10 +9,12 @@ import PageHeadingContainer from "@/components/fragments/PageHeadingContainer";
 const NotesPage = () => {
   const { isSidebarOpen } = useAppSelector(state => state.menu)
   return (
-    <PageHeadingContainer>
-      <IconMenu isSidebarOpen={isSidebarOpen} />
-      <Title text={'Sticky Wall'} />
-    </PageHeadingContainer>
+    <div className="ml-3">
+      <PageHeadingContainer>
+        <IconMenu isSidebarOpen={isSidebarOpen} />
+        <Title text={'Sticky Wall'} />
+      </PageHeadingContainer>
+    </div>
   );
 };
 
