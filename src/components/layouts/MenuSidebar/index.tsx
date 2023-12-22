@@ -30,6 +30,7 @@ const MenuSidebar = () => {
             hide='-translate-x-64'
             icon={<IconMenu />}
             isOpen={isSidebarOpen}
+            className='w-64'
         >
             <SidebarMenu name={"Tasks"}>
                 {
