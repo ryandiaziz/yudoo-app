@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import StoreProvider from "@/store/StoreProvider";
-import "./globals.css";
+import "@/css/globals.css";
+import MenuSidebar from "@/components/layouts/MenuSidebar";
 
 export const metadata: Metadata = {
   title: "Yoodo",
@@ -16,7 +17,10 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-bg-300">
         <StoreProvider>
-          {children}
+          <main className={`mt-3 transition-all duration-300 ease-in-out `}>
+            <MenuSidebar />
+            <div>{children}</div>
+          </main>
         </StoreProvider>
       </body>
     </html>
