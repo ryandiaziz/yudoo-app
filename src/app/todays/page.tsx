@@ -9,15 +9,19 @@ import TaskItem from "@/components/elements/TaskItem";
 import IconMenu from "@/components/elements/IconMenu";
 import TaskSidebar from "@/components/layouts/TaskSidebar";
 
-
 const TodaysPage = () => {
   const { isSidebarOpen } = useAppSelector(state => state.menu)
   return (
-    <div className="ml-3">
+    <div className={`${isSidebarOpen ? 'ml-64' : 'delay-200 ml-8'} transition-transform ease-in-out duration-300`}>
       <TaskSidebar />
       <PageHeadingContainer>
-        <IconMenu isSidebarOpen={isSidebarOpen} />
-        <Title text={'Today'} />
+        <IconMenu
+          isSidebarOpen={isSidebarOpen}
+        />
+        <Title
+          text={'Today'}
+          isSidebarOpen={isSidebarOpen}
+        />
       </PageHeadingContainer>
       <div className="pt-7 ">
         <AddTask />
