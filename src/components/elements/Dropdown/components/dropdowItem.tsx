@@ -1,15 +1,17 @@
-import React from 'react'
+import React from "react";
 
 type DropdownItemProps = {
-    title: string,
-    value: string,
-    isSelected: boolean
-}
+    title: string;
+    value: string;
+    isSelected: boolean;
+};
 
 const DropdownItem = ({ title, value, isSelected }: DropdownItemProps) => {
     return (
-        <option value={value} selected={isSelected}>{title}</option>
-    )
-}
+        <option value={value} selected={isSelected}>
+            {title}
+        </option>
+    );
+};
 
-export default DropdownItem
+export default DropdownItem;
