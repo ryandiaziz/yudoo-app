@@ -13,6 +13,7 @@ import SidebarMenu from '@/components/fragments/SidebarMenu'
 import SidebarManuItem from '@/components/elements/SidebarMenuItem'
 import IconMenu from '@/components/elements/IconMenu';
 import PrimaryButton from '@/components/elements/PrimaryButton';
+import ButtonContainerMenuBar from '@/components/fragments/ButtonContainerMenuBar';
 
 const MenuSidebar = () => {
     const { isSidebarOpen } = useAppSelector(state => state.menu)
@@ -66,10 +67,9 @@ const MenuSidebar = () => {
                         iconColor={"text-red-500"}
                     />
                 </SidebarMenu>
-                <div className='absolute bottom-16 w-full flex justify-evenly px-5'>
-                    {/* <OutlineButton name={"Delete Task"} /> */}
+                <ButtonContainerMenuBar>
                     <PrimaryButton name={"Sign Out"} />
-                </div>
+                </ButtonContainerMenuBar>
             </div>
         </SidebarLayout>
     )
