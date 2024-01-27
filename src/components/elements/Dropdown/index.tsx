@@ -1,5 +1,3 @@
-import React from "react";
-
 import DropdownItem from "./components/dropdowItem";
 import DropdownContainer from "./components/dropdownContainer";
 import Label from "../Label";

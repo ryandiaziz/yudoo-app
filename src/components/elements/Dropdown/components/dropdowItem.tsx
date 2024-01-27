@@ -1,5 +1,3 @@
-import React from "react";
-
 type DropdownItemProps = {
     title: string;
     value: string;

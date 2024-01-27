@@ -1,5 +1,7 @@
-import React from 'react'
-import { ImCheckboxUnchecked, ImCheckboxChecked } from "react-icons/im";
+import {
+    ImCheckboxUnchecked,
+    // ImCheckboxChecked
+} from "react-icons/im";
 import { MdArrowForwardIos } from "react-icons/md";
 import IconWrapper from '../IconWrapper';
 
