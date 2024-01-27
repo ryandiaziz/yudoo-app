@@ -1,15 +1,12 @@
-'use client'
-import React from "react";
-import { useAppSelector } from "@/store/hooks";
+import { useAppSelector } from "../../store/hooks"
+import TaskSidebar from "../../components/layouts/TaskSidebar"
+import PageHeadingContainer from "../../components/fragments/PageHeadingContainer"
+import IconMenu from "../../components/elements/IconMenu"
+import Title from "../../components/elements/Title"
+import AddTask from "../../components/elements/AddTask"
+import TaskItem from "../../components/elements/TaskItem"
 
-import PageHeadingContainer from "@/components/fragments/PageHeadingContainer";
-import AddTask from "@/components/elements/AddTask";
-import Title from "@/components/elements/Title";
-import TaskItem from "@/components/elements/TaskItem";
-import IconMenu from "@/components/elements/IconMenu";
-import TaskSidebar from "@/components/layouts/TaskSidebar";
-
-const TodaysPage = () => {
+const TodayPage = () => {
   const { isSidebarOpen } = useAppSelector(state => state.menu)
   return (
     <div className={`${isSidebarOpen ? 'ml-64' : 'delay-200 ml-8'} transition-transform ease-in-out duration-300`}>
@@ -32,7 +29,7 @@ const TodaysPage = () => {
         }
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TodaysPage;
+export default TodayPage
