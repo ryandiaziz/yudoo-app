@@ -1,5 +1,3 @@
-import React from 'react'
-
 type LabelProps = {
     name: string
 }

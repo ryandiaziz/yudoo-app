@@ -24,7 +24,7 @@ const TodayPage = () => {
         <AddTask />
         {
           Array(4).fill(0).map((d, i) => (
-            <TaskItem key={i} index={i} />
+            <TaskItem key={`${i - d}`} index={i} />
           ))
         }
       </div>
