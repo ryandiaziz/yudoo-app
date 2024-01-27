@@ -1,3 +1,5 @@
+import RootLayout from "../components/layouts/RootLayout";
+
 import {
     createBrowserRouter,
     createRoutesFromElements,
@@ -8,7 +10,6 @@ import {
     TodayPage,
     UpcomingPage,
 } from "../pages/index"
-import RootLayout from "../RootLayout"
 
 const router = createBrowserRouter(
     createRoutesFromElements(

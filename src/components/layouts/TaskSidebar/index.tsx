@@ -1,6 +1,4 @@
-import React from "react";
-
-// import { useAppSelector } from '@/store/hooks';
+import { useAppSelector } from "../../../store/hooks";
 import SidebarLayout from "../SidebarLayout";
 import IconClose from "../../elements/IconClose";
 import InputTask from "../../elements/InputTask";
@@ -11,12 +9,12 @@ import Dropdown from "../../elements/Dropdown";
 import ButtonContainerMenuBar from "../../fragments/ButtonContainerMenuBar";
 
 const TaskSidebar = () => {
-    // const { isTaskSidebarOpen } = useAppSelector(state => state.menu)
+    const { isTaskSidebarOpen } = useAppSelector(state => state.menu)
 
     return (
         <SidebarLayout
             title="Task:"
-            isOpen={true}
+            isOpen={isTaskSidebarOpen}
             position="top-0 right-0"
             hide="translate-x-96"
             className="w-96"

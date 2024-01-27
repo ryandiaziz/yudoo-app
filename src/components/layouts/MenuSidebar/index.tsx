@@ -1,12 +1,9 @@
-import React from "react";
-// import Link from 'next/link';
-// import { usePathname } from 'next/navigation';
 import { LuListTodo } from "react-icons/lu";
 import { FaStickyNote } from "react-icons/fa";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { RiCheckboxBlankFill } from "react-icons/ri";
 
-// import { useAppSelector } from '@/store/hooks';
+import { useAppSelector } from '../../../store/hooks';
 import SidebarLayout from "../SidebarLayout";
 import SidebarMenu from "../../fragments/SidebarMenu";
 import SidebarManuItem from "../../elements/SidebarMenuItem";
@@ -15,10 +12,8 @@ import PrimaryButton from "../../elements/PrimaryButton";
 import ButtonContainerMenuBar from "../../fragments/ButtonContainerMenuBar";
 
 const MenuSidebar = () => {
-    // const { isSidebarOpen } = useAppSelector(state => state.menu)
-    const isSidebarOpen = true;
-    // const pathName = usePathname()
-    const pathName = "/";
+    const { isSidebarOpen } = useAppSelector(state => state.menu)
+
     const taskMenus = [
         {
             name: "Upcoming",
@@ -44,7 +39,7 @@ const MenuSidebar = () => {
             hide="-translate-x-64"
             icon={<IconMenu />}
             isOpen={isSidebarOpen}
-            className={`w-64 ${pathName === "/" && "hidden"}`}>
+            className={`w-64`}>
             <div className="relative h-full">
                 <SidebarMenu name={"Tasks"}>
                     {taskMenus.map((menu, id) => (
