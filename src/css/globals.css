@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .sidebar-container {
+        @apply fixed h-screen p-3 transition-transform duration-300 ease-in-out;
+    }
+
+    .input-style {
+        @apply placeholder:font-medium placeholder:text-text-200 p-3 bg-transparent border border-bg-200 rounded-md focus:outline-none;
+    }
+
+    .btn-size {
+        @apply px-4 py-2 rounded-md;
+    }
+
+    .borr {
+        @apply border border-red-500;
+    }
+}
