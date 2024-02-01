@@ -18,7 +18,8 @@ const TaskSidebar = () => {
             position="top-0 right-0"
             hide="translate-x-96"
             className="w-96"
-            icon={<IconClose />}>
+            icon={<IconClose />}
+        >
             <div className="relative space-y-3 mt-3 h-full">
                 <InputTask />
                 <InputDesc />

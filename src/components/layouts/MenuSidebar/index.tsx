@@ -7,7 +7,6 @@ import { useAppSelector } from '../../../store/hooks';
 import SidebarLayout from "../SidebarLayout";
 import SidebarMenu from "../../fragments/SidebarMenu";
 import SidebarManuItem from "../../elements/SidebarMenuItem";
-import IconMenu from "../../elements/IconMenu";
 import PrimaryButton from "../../elements/PrimaryButton";
 import ButtonContainerMenuBar from "../../fragments/ButtonContainerMenuBar";
 
@@ -37,7 +36,6 @@ const MenuSidebar = () => {
             title="Menu"
             position="left-0 top-0"
             hide="-translate-x-64"
-            icon={<IconMenu />}
             isOpen={isSidebarOpen}
             className={`w-64`}>
             <div className="relative h-full">

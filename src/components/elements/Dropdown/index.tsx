@@ -12,7 +12,11 @@ const Dropdown = () => {
                     value="personal"
                     isSelected={false}
                 />
-                <DropdownItem title="Work" value="work" isSelected={false} />
+                <DropdownItem
+                    title="Work"
+                    value="work"
+                    isSelected={false}
+                />
             </DropdownContainer>
         </div>
     );

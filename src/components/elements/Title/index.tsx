@@ -1,6 +1,6 @@
-const Title = ({ text, isSidebarOpen }: any) => {
+const Title = ({ text }: any) => {
     return (
-        <h1 className={`text-5xl font-bold text-text-100 w-max ${!isSidebarOpen && 'translate-x-3 transition-transform ease-in-out duration-150'}`}>{text}</h1>
+        <h1 className={`text-5xl font-bold text-text-100 w-max ml-4`}>{text}</h1>
     )
 }
 

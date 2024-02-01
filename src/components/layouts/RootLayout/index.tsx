@@ -1,10 +1,12 @@
 import { Outlet } from "react-router-dom";
-import MenuSidebar from "../MenuSidebar";
+import MyModal from "../../ClickOutSide";
+// import MenuSidebar from "../MenuSidebar";
 
 const RootLayout = () => {
     return (
         <>
-            <MenuSidebar />
+            {/* <MenuSidebar /> */}
+            <MyModal />
             <Outlet />
         </>
     );
