@@ -1,4 +1,7 @@
-import { useAppSelector } from "../../../store/hooks";
+import { useRef, useEffect } from "react";
+
+import { onTaskSidebarHandler } from "../../../store/features/menuSlice";
+import { useAppSelector, useAppDispatch } from "../../../store/hooks";
 import SidebarLayout from "../SidebarLayout";
 import IconClose from "../../elements/IconClose";
 import InputTask from "../../elements/InputTask";
@@ -9,16 +12,33 @@ import Dropdown from "../../elements/Dropdown";
 import ButtonContainerMenuBar from "../../fragments/ButtonContainerMenuBar";
 
 const TaskSidebar = () => {
+    const dispatch = useAppDispatch()
     const { isTaskSidebarOpen } = useAppSelector(state => state.menu)
+
+    const taskRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (taskRef.current && !taskRef.current.contains(event.target as Node)) {
+                dispatch(onTaskSidebarHandler(false))
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [dispatch]);
 
     return (
         <SidebarLayout
             title="Task:"
-            isOpen={isTaskSidebarOpen}
-            position="top-0 right-0"
-            hide="translate-x-96"
             className="w-96"
+            hide="translate-x-96"
+            position="top-0 right-0"
             icon={<IconClose />}
+            useRef={taskRef}
+            isOpen={isTaskSidebarOpen}
         >
             <div className="relative space-y-3 mt-3 h-full">
                 <InputTask />
