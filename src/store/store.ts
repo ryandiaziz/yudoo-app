@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import MenuReducer from './features/menuSlice'
+import taskSlice from './features/taskSlice'
 
 export const store = configureStore({
     reducer: {
-        menu: MenuReducer
+        menu: MenuReducer,
+        task: taskSlice
     }
 })
 

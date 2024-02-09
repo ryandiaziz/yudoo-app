@@ -10,6 +10,7 @@ import PrimaryButton from "../../elements/PrimaryButton";
 import OutlineButton from "../../elements/OutlineButton";
 import Dropdown from "../../elements/Dropdown";
 import ButtonContainerMenuBar from "../../fragments/ButtonContainerMenuBar";
+import Overlay from "../../elements/Overlay";
 
 const TaskSidebar = () => {
     const dispatch = useAppDispatch()
@@ -31,25 +32,31 @@ const TaskSidebar = () => {
     }, [dispatch]);
 
     return (
-        <SidebarLayout
-            title="Task:"
-            className="w-96"
-            hide="translate-x-96"
-            position="top-0 right-0"
-            icon={<IconClose />}
-            useRef={taskRef}
-            isOpen={isTaskSidebarOpen}
-        >
-            <div className="relative space-y-3 mt-3 h-full">
-                <InputTask />
-                <InputDesc />
-                <Dropdown />
-                <ButtonContainerMenuBar>
-                    <OutlineButton name={"Delete Task"} />
-                    <PrimaryButton name={"Save Changes"} />
-                </ButtonContainerMenuBar>
-            </div>
-        </SidebarLayout>
+        <>
+            <SidebarLayout
+                title="Task:"
+                className="w-96 z-50"
+                hide="translate-x-96"
+                position="top-0 right-0"
+                shadow="shadow-sm"
+                icon={<IconClose />}
+                useRef={taskRef}
+                isOpen={isTaskSidebarOpen}
+            >
+                <div className="relative space-y-3 mt-3 h-full">
+                    <InputTask />
+                    <InputDesc />
+                    <Dropdown />
+                    <ButtonContainerMenuBar>
+                        <OutlineButton name={"Delete Task"} />
+                        <PrimaryButton name={"Save Changes"} />
+                    </ButtonContainerMenuBar>
+                </div>
+            </SidebarLayout>
+            {
+                isTaskSidebarOpen && <Overlay />
+            }
+        </>
     );
 };
 

@@ -4,14 +4,14 @@ import {
 } from '@reduxjs/toolkit'
 // import type { RootState } from '../store'
 
-export interface MenuState {
+interface MenuState {
     isSidebarOpen: boolean,
     isTaskSidebarOpen: boolean,
 }
 
 const initialState: MenuState = {
     isSidebarOpen: true,
-    isTaskSidebarOpen: true,
+    isTaskSidebarOpen: false,
 }
 
 export const menuSlice = createSlice({
@@ -27,9 +27,9 @@ export const menuSlice = createSlice({
     }
 })
 
+export default menuSlice.reducer;
+
 export const {
     onSidebarHandler,
     onTaskSidebarHandler,
-} = menuSlice.actions
-
-export default menuSlice.reducer
+} = menuSlice.actions;
