@@ -11,7 +11,7 @@ import PrimaryButton from "../../elements/PrimaryButton";
 import ButtonContainerMenuBar from "../../fragments/ButtonContainerMenuBar";
 
 const MenuSidebar = () => {
-    const { isSidebarOpen } = useAppSelector(state => state.menu)
+    const { isOpen } = useAppSelector(state => state.menu.sidebar)
 
     const taskMenus = [
         {
@@ -36,7 +36,7 @@ const MenuSidebar = () => {
             title="Menu"
             position="left-0 top-0"
             hide="-translate-x-64"
-            isOpen={isSidebarOpen}
+            isOpen={isOpen}
             className={`w-64`}>
             <div className="relative h-full">
                 <SidebarMenu name={"Tasks"}>

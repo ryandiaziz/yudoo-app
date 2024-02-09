@@ -14,7 +14,7 @@ import Overlay from "../../elements/Overlay";
 
 const TaskSidebar = () => {
     const dispatch = useAppDispatch()
-    const { isTaskSidebarOpen } = useAppSelector(state => state.menu)
+    const { isOpen, isAdd } = useAppSelector(state => state.menu.taskSidebar)
 
     const taskRef = useRef<HTMLDivElement>(null);
 
@@ -41,20 +41,20 @@ const TaskSidebar = () => {
                 shadow="shadow-sm"
                 icon={<IconClose />}
                 useRef={taskRef}
-                isOpen={isTaskSidebarOpen}
+                isOpen={isOpen}
             >
                 <div className="relative space-y-3 mt-3 h-full">
                     <InputTask />
                     <InputDesc />
                     <Dropdown />
                     <ButtonContainerMenuBar>
-                        <OutlineButton name={"Delete Task"} />
+                        {isAdd && <OutlineButton name={"Delete Task"} />}
                         <PrimaryButton name={"Save Changes"} />
                     </ButtonContainerMenuBar>
                 </div>
             </SidebarLayout>
             {
-                isTaskSidebarOpen && <Overlay />
+                isOpen && <Overlay />
             }
         </>
     );

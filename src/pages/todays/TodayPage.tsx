@@ -11,7 +11,7 @@ import TaskItem from "../../components/elements/TaskItem"
 
 const TodayPage = () => {
   const dispatch = useAppDispatch()
-  const { isSidebarOpen } = useAppSelector(state => state.menu)
+  const { isOpen } = useAppSelector(state => state.menu.sidebar)
   const { todays } = useAppSelector(state => state.task)
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const TodayPage = () => {
   }, [])
 
   return (
-    <div className={`${isSidebarOpen ? 'ml-64' : 'delay-200 ml-8'} pt-3 transition-transform ease-in-out duration-300`}>
+    <div className={`${isOpen ? 'ml-64' : 'delay-200 ml-8'} pt-3 transition-transform ease-in-out duration-300`}>
       <TaskSidebar />
       <PageHeadingContainer>
         <IconMenu />

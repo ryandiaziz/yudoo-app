@@ -4,14 +4,28 @@ import {
 } from '@reduxjs/toolkit'
 // import type { RootState } from '../store'
 
+interface Sidebar {
+    isOpen: boolean
+}
+
+interface TaskSidebar {
+    isOpen: boolean,
+    isAdd: boolean
+}
+
 interface MenuState {
-    isSidebarOpen: boolean,
-    isTaskSidebarOpen: boolean,
+    sidebar: Sidebar,
+    taskSidebar: TaskSidebar,
 }
 
 const initialState: MenuState = {
-    isSidebarOpen: true,
-    isTaskSidebarOpen: false,
+    sidebar: {
+        isOpen: false
+    },
+    taskSidebar: {
+        isOpen: false,
+        isAdd: false
+    },
 }
 
 export const menuSlice = createSlice({
@@ -19,10 +33,10 @@ export const menuSlice = createSlice({
     initialState,
     reducers: {
         onSidebarHandler: state => {
-            state.isSidebarOpen = !state.isSidebarOpen
+            state.sidebar.isOpen = !state.sidebar.isOpen
         },
         onTaskSidebarHandler: (state, action) => {
-            state.isTaskSidebarOpen = action.payload
+            state.taskSidebar.isOpen = action.payload
         }
     }
 })
