@@ -35,7 +35,7 @@ const TaskSidebar = () => {
         <>
             <SidebarLayout
                 title="Task:"
-                className="w-96 z-50"
+                className="w-96 max-[425px]:w-full z-50 borr"
                 hide="translate-x-96"
                 position="top-0 right-0"
                 shadow="shadow-sm"

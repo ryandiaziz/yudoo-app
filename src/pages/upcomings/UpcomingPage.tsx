@@ -1,6 +1,8 @@
 const UpcomingPage = () => {
     return (
-        <div>UpcomingPage</div>
+        <div className="flex justify-center items-center h-screen">
+            <p className="borr max-[425px]:bg-red-400">UpcomingPage</p>
+        </div>
     )
 }
 
