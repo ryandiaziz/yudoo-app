@@ -8,7 +8,7 @@
     }
 
     .input-style {
-        @apply placeholder:font-medium placeholder:text-text-200 p-3 bg-transparent border border-bg-200 rounded-md focus:outline-none;
+        @apply placeholder:font-normal placeholder:text-text-200 p-2 bg-transparent border border-bg-200 rounded-md focus:outline-none;
     }
 
     .btn-size {

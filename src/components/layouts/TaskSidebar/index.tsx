@@ -12,10 +12,14 @@ import Dropdown from "../../elements/Dropdown";
 import ButtonContainerMenuBar from "../../fragments/ButtonContainerMenuBar";
 import Overlay from "../../elements/Overlay";
 
+// date picke
+import "react-datepicker/dist/react-datepicker.css";
+import InputDate from "../../elements/inputDate";
+// date picke
+
 const TaskSidebar = () => {
     const dispatch = useAppDispatch()
     const { isOpen, isAdd } = useAppSelector(state => state.menu.taskSidebar)
-
     const taskRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -35,10 +39,9 @@ const TaskSidebar = () => {
         <>
             <SidebarLayout
                 title="Task:"
-                className="w-96 max-[425px]:w-full z-50 borr"
+                className="w-96 max-sm:w-full z-50"
                 hide="translate-x-96"
                 position="top-0 right-0"
-                shadow="shadow-sm"
                 icon={<IconClose />}
                 useRef={taskRef}
                 isOpen={isOpen}
@@ -47,6 +50,7 @@ const TaskSidebar = () => {
                     <InputTask />
                     <InputDesc />
                     <Dropdown />
+                    <InputDate />
                     <ButtonContainerMenuBar>
                         {isAdd && <OutlineButton name={"Delete Task"} />}
                         <PrimaryButton name={"Save Changes"} />

@@ -5,12 +5,12 @@ import { onTaskSidebarHandler } from "../../../store/features/menuSlice";
 
 const AddTask = () => {
     const dispatch = useAppDispatch();
-    const { isTaskSidebarOpen } = useAppSelector(state => state.menu)
+    const { isOpen } = useAppSelector(state => state.menu.taskSidebar)
 
     return (
         <div
             onClick={() => {
-                if (!isTaskSidebarOpen) dispatch(onTaskSidebarHandler(true))
+                if (!isOpen) dispatch(onTaskSidebarHandler(true))
             }}
             className="flex items-center border border-bg-200 rounded-md p-3 max-w-2xl cursor-pointer">
             <div className="text-text-200 text-lg">

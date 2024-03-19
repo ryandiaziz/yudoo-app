@@ -8,6 +8,7 @@ import IconMenu from "../../components/elements/IconMenu"
 import Title from "../../components/elements/Title"
 import AddTask from "../../components/elements/AddTask"
 import TaskItem from "../../components/elements/TaskItem"
+import useDocumentTitle from "../../components/elements/DocumentTitle"
 
 const TodayPage = () => {
   const dispatch = useAppDispatch()
@@ -17,6 +18,8 @@ const TodayPage = () => {
   useEffect(() => {
     dispatch(fetchTodayTask(""))
   }, [])
+
+  useDocumentTitle('Today')
 
   return (
     <div className={`${isOpen ? 'ml-64' : 'delay-200 ml-8'} pt-3 transition-transform ease-in-out duration-300`}>

@@ -4,7 +4,9 @@ type LabelProps = {
 
 const Label = ({ name }: LabelProps) => {
     return (
-        <label className='mr-8'>{name}</label>
+        <div className="w-24">
+            <p className="w-min">{name}</p>
+        </div>
     )
 }
 
