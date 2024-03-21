@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 
-import { onTaskSidebarHandler } from "../../../store/features/menuSlice";
+import { onTaskSidebarHandler, onAlertSuccess } from "../../../store/features/menuSlice";
 import { useAppSelector, useAppDispatch } from "../../../store/hooks";
 import SidebarLayout from "../SidebarLayout";
 import IconClose from "../../elements/IconClose";
@@ -21,6 +21,13 @@ const TaskSidebar = () => {
     const dispatch = useAppDispatch()
     const { isOpen, isAdd } = useAppSelector(state => state.menu.taskSidebar)
     const taskRef = useRef<HTMLDivElement>(null);
+
+    const handlerAlert = () => {
+        dispatch(onAlertSuccess({ isActive: true, message: "Task Added" }))
+        setTimeout(() => {
+            dispatch(onAlertSuccess({ isActive: false, message: "" }))
+        }, 3000)
+    }
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -53,7 +60,10 @@ const TaskSidebar = () => {
                     <InputDate />
                     <ButtonContainerMenuBar>
                         {isAdd && <OutlineButton name={"Delete Task"} />}
-                        <PrimaryButton name={"Save Changes"} />
+                        <PrimaryButton
+                            name={"Save Changes"}
+                            onClick={handlerAlert}
+                        />
                     </ButtonContainerMenuBar>
                 </div>
             </SidebarLayout>

@@ -13,9 +13,21 @@ interface TaskSidebar {
     isAdd: boolean
 }
 
+interface Alert {
+    success: {
+        isActive: boolean,
+        message: string
+    },
+    danger: {
+        isActive: boolean,
+        message: string
+    }
+}
+
 interface MenuState {
     sidebar: Sidebar,
     taskSidebar: TaskSidebar,
+    alert: Alert
 }
 
 const initialState: MenuState = {
@@ -26,6 +38,16 @@ const initialState: MenuState = {
         isOpen: false,
         isAdd: false
     },
+    alert: {
+        success: {
+            isActive: false,
+            message: ""
+        },
+        danger: {
+            isActive: false,
+            message: ""
+        }
+    }
 }
 
 export const menuSlice = createSlice({
@@ -37,6 +59,10 @@ export const menuSlice = createSlice({
         },
         onTaskSidebarHandler: (state, action) => {
             state.taskSidebar.isOpen = action.payload
+        },
+        onAlertSuccess: (state, action) => {
+            state.alert.success.isActive = action.payload.isActive
+            state.alert.success.message = action.payload.message
         }
     }
 })
@@ -46,4 +72,5 @@ export default menuSlice.reducer;
 export const {
     onSidebarHandler,
     onTaskSidebarHandler,
+    onAlertSuccess
 } = menuSlice.actions;
