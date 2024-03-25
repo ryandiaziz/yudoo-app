@@ -6,16 +6,14 @@ const Dropdown = () => {
     return (
         <div className="flex items-center gap-4">
             <Label name="Category" />
-            <DropdownContainer>
+            <DropdownContainer >
                 <DropdownItem
                     title="Personal"
                     value="personal"
-                    isSelected={false}
                 />
                 <DropdownItem
                     title="Work"
                     value="work"
-                    isSelected={false}
                 />
             </DropdownContainer>
         </div>
