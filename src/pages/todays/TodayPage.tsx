@@ -9,6 +9,7 @@ import Title from "../../components/elements/Title"
 import AddTask from "../../components/elements/AddTask"
 import TaskItem from "../../components/elements/TaskItem"
 import useDocumentTitle from "../../components/elements/DocumentTitle"
+import { dateParser } from "../../helper/dateParser"
 
 const TodayPage = () => {
   const dispatch = useAppDispatch()
@@ -28,17 +29,20 @@ const TodayPage = () => {
         <IconMenu />
         <Title text={'Today'} />
       </PageHeadingContainer>
-      <div className="pt-7 ">
-        <AddTask />
-        {
-          todays.map((d, i) => (
-            <TaskItem
-              key={`${i}`}
-              index={i}
-              name={d.name}
-            />
-          ))
-        }
+      <div className="pt-20">
+        <div className="w-4/5 mx-auto">
+          <AddTask />
+          {
+            todays.map((d, i) => (
+              <TaskItem
+                key={`${i}`}
+                index={i}
+                title={d.title}
+                due_date={dateParser(d.due_date)}
+              />
+            ))
+          }
+        </div>
       </div>
     </div>
   )

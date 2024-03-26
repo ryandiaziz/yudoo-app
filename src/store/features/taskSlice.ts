@@ -1,16 +1,15 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const URL: string = "https://65b5fd69da3a3c16ab0017fd.mockapi.io/api/v1/task"
+const URL: string = "https://65b5fd69da3a3c16ab0017fd.mockapi.io/api/v1/tasks"
 
 interface Task {
     id: string,
-    name: string,
-    desc: string,
-    category: string,
+    title: string,
+    description: string,
+    due_date: string,
     isDone: boolean,
-    createdAt: string,
-    updatedAt: string
+    createdAt: string
 }
 
 interface TaskState {
